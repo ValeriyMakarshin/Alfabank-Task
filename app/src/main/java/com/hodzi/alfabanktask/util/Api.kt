@@ -1,5 +1,6 @@
 package com.hodzi.alfabanktask.util
 
+import com.hodzi.alfabanktask.data.Feed
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,5 +11,5 @@ interface Api {
         @Query("subtype") subtype: Int = 1,
         @Query("category") category: Int = 1,
         @Query("city") city: Int = 21
-    ): Observable<String>
+    ): Observable<Feed>
 }
