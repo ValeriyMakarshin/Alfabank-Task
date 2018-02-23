@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 import javax.inject.Singleton
 
@@ -18,6 +19,7 @@ class NetModule {
         Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(baseUrl)
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(SimpleXmlConverterFactory.create())
             .build()
             .create(Api::class.java)
@@ -26,4 +28,5 @@ class NetModule {
         OkHttpClient.Builder()
             .addNetworkInterceptor(StethoInterceptor())
             .build()
+
 }

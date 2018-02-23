@@ -3,6 +3,8 @@
     package="com.hodzi.alfabanktask"
     >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".AlfaApp"
         android:allowBackup="true"

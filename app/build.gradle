@@ -28,6 +28,9 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 apply from: 'deps.gradle'
@@ -36,6 +39,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation daggerLibs
     implementation retrofitLibs
+    implementation rxJavaLibs
     implementation kotlinLibs
     implementation stethoLibs
     implementation supportLibs
