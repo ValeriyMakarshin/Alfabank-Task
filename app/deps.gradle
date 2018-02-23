@@ -23,6 +23,15 @@ ext {
             support    : "com.android.support:support-v4:$versions.support",
             constraint : "com.android.support.constraint:constraint-layout:$versions.constraint"
     ]
+    dagger = [
+            dagger          : "com.google.dagger:dagger:$versions.dagger",
+            daggerAndroid   : "com.google.dagger:dagger-android:$versions.dagger",
+            daggerAndroidSup: "com.google.dagger:dagger-android-support:$versions.dagger"
+    ]
+    kapt = [
+            compiler : "com.google.dagger:dagger-compiler:$versions.dagger",
+            processor: "com.google.dagger:dagger-android-processor:$versions.dagger"
+    ]
     rxJava = [
             rxJava   : "io.reactivex.rxjava2:rxjava:$versions.rxjava2",
             rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
@@ -30,6 +39,7 @@ ext {
     retrofit = [
             retrofit : "com.squareup.retrofit2:retrofit:$versions.retrofit",
             rxAdapter: "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit",
+            xmlParse : "com.squareup.retrofit2:converter-simplexml:$versions.retrofit"
     ]
     okHttp = [
             logger: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
@@ -56,6 +66,8 @@ ext {
             test     : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
     ]
     supportLibs = supportDeps.values()
+    daggerLibs = dagger.values()
+    kaptLibs = kapt.values()
     kotlinLibs = kotlinLb.values()
     retrofitLibs = retrofit.values()
     okHttpLibs = okHttp.values()
