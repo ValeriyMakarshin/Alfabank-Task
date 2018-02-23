@@ -1,4 +1,4 @@
-package com.hodzi.alfabank_task
+package com.hodzi.alfabankTask
 
 import org.junit.Test
 

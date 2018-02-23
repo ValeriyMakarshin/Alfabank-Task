@@ -1,4 +1,4 @@
-package com.hodzi.alfabank_task
+package com.hodzi.alfabankTask
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
