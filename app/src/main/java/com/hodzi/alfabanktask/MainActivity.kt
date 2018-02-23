@@ -1,4 +1,4 @@
-package com.hodzi.alfabankTask
+package com.hodzi.alfabanktask
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -12,6 +12,5 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
     }
-
 
 }
