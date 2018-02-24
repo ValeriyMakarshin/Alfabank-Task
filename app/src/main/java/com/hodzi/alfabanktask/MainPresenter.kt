@@ -1,8 +1,10 @@
 package com.hodzi.alfabanktask
 
-import com.hodzi.alfabanktask.utils.AlfaExecutors
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class MainPresenter(val alfaExecutors: AlfaExecutors) {
+@Singleton
+class MainPresenter @Inject constructor(val mainInteractor: MainInteractor) {
 
 
 }
