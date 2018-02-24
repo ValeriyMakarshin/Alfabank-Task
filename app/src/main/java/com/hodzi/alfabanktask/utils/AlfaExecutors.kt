@@ -6,9 +6,13 @@ import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 
 
-class AlfaExecutors(val diskIO: Executor = Executors.newSingleThreadExecutor(),
-                    val mNetworkIO: Executor = Executors.newFixedThreadPool(3),
-                    val mMainThread: Executor = MainThreadExecutor()) {
+data class AlfaExecutors(val diskIO: Executor = Executors.newSingleThreadExecutor(),
+                         val mNetworkIO: Executor =
+                         Executors.newFixedThreadPool(NETWORK_THREAD_POOL_SIZE),
+                         val mMainThread: Executor = MainThreadExecutor()) {
+    companion object {
+        const val NETWORK_THREAD_POOL_SIZE = 3
+    }
 
     private class MainThreadExecutor : Executor {
         private val mainThreadHandler = Handler(Looper.getMainLooper())
