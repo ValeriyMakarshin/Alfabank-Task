@@ -1,7 +1,7 @@
 package com.hodzi.alfabanktask.di
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.hodzi.alfabanktask.util.Api
+import com.hodzi.alfabanktask.data.network.Api
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

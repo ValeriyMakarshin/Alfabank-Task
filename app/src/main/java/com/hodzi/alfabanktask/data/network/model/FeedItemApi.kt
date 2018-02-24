@@ -1,10 +1,10 @@
-package com.hodzi.alfabanktask.data
+package com.hodzi.alfabanktask.data.network.model
 
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
 @Root(name = "item", strict = false)
-class FeedItem(
+class FeedItemApi(
     @field:Element(name = "title")
     var title: String? = null,
     @field:Element(name = "link")

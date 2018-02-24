@@ -43,8 +43,10 @@ dependencies {
     implementation kotlinLibs
     implementation stethoLibs
     implementation supportLibs
+    implementation roomLibs
 
     kapt kaptLibs
+    kapt roomKaptLibs
 
     testImplementation unitTestLibs
 

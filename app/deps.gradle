@@ -14,7 +14,8 @@ ext {
             constraint : '1.0.2',
             junit      : '4.12',
             test       : '1.0.1',
-            mockitoK   : '1.5.0'
+            mockitoK   : '1.5.0',
+            room       : '1.0.0',
 
     ]
     supportDeps = [
@@ -32,9 +33,10 @@ ext {
             compiler : "com.google.dagger:dagger-compiler:$versions.dagger",
             processor: "com.google.dagger:dagger-android-processor:$versions.dagger"
     ]
-    rxJava = [
-            rxJava   : "io.reactivex.rxjava2:rxjava:$versions.rxjava2",
-            rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+    kotlinLb = [
+            testJUnit: "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
+            stdlib   : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+            test     : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
     ]
     retrofit = [
             retrofit : "com.squareup.retrofit2:retrofit:$versions.retrofit",
@@ -45,10 +47,20 @@ ext {
             logger: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
             self  : "com.squareup.okhttp3:okhttp:$versions.okHttp"
     ]
+    rxJava = [
+            rxJava   : "io.reactivex.rxjava2:rxjava:$versions.rxjava2",
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+    ]
     stetho = [
             stetho       : "com.facebook.stetho:stetho:$versions.stetho",
             okhttp3      : "com.facebook.stetho:stetho-okhttp3:$versions.stetho",
             urlconnection: "com.facebook.stetho:stetho-urlconnection:$versions.stetho"
+    ]
+    room = [
+            room: "android.arch.persistence.room:runtime:$versions.room",
+    ]
+    roomKapt = [
+            room: "android.arch.persistence.room:compiler:$versions.room",
     ]
     unitTest = [
             testRunner   : "com.android.support.test:runner:$versions.atsl_runner",
@@ -60,11 +72,7 @@ ext {
             espressoIntents: "com.android.support.test.espresso:espresso-intents:$versions.espresso",
             espressoContrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
     ]
-    kotlinLb = [
-            testJUnit: "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
-            stdlib   : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
-            test     : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
-    ]
+
     supportLibs = supportDeps.values()
     daggerLibs = dagger.values()
     kaptLibs = kapt.values()
@@ -73,6 +81,8 @@ ext {
     okHttpLibs = okHttp.values()
     rxJavaLibs = rxJava.values()
     stethoLibs = stetho.values()
+    roomLibs = room.values()
+    roomKaptLibs = roomKapt.values()
     unitTestLibs = unitTest.values()
     androidTestsLibs = androidTests.values() + supportLibs + unitTestLibs
 }

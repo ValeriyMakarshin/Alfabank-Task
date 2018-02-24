@@ -1,14 +1,14 @@
-package com.hodzi.alfabanktask.data
+package com.hodzi.alfabanktask.data.network.model
 
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
 
 
-@Root(name = "channel", strict = false)
-class Channel(
+@Root(name = "channelApi", strict = false)
+class ChannelApi(
     @field:ElementList(inline = true, name = "item")
-    var feedItems: List<FeedItem>? = null,
+    var feedItemApis: List<FeedItemApi>? = null,
     @field:Element(name = "title")
     var title: String? = null,
     @field:Element(name = "link")
