@@ -4,7 +4,7 @@ import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
 @Root(name = "item", strict = false)
-class FeedItemApi(
+data class FeedItemApi(
     @field:Element(name = "title")
     var title: String? = null,
     @field:Element(name = "link")

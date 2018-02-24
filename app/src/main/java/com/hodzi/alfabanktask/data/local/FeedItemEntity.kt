@@ -1,6 +1,6 @@
 package com.hodzi.alfabanktask.data.local
 
-class FeedItemEntity(
+data class FeedItemEntity(
     var title: String? = null,
     var link: String? = null,
     var description: String? = null,

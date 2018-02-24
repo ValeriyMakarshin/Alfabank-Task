@@ -28,5 +28,4 @@ class NetModule {
         OkHttpClient.Builder()
             .addNetworkInterceptor(StethoInterceptor())
             .build()
-
 }

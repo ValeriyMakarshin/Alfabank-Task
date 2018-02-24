@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "channels")
-class ChannelEntity(
+data class ChannelEntity(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "entryId")
     var entryId: Int,
     var title: String? = null,

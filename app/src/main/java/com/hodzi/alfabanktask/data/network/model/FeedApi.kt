@@ -4,7 +4,7 @@ import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
 @Root(name = "rss", strict = false)
-class FeedApi(
-    @field:Element(name = "channelApi")
+data class FeedApi(
+    @field:Element(name = "channel")
     var channelApi: ChannelApi? = null
 )
