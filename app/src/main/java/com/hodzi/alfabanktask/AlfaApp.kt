@@ -10,6 +10,8 @@ import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
 
+
+
 class AlfaApp : Application(), HasActivityInjector {
     @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
@@ -22,7 +24,6 @@ class AlfaApp : Application(), HasActivityInjector {
                 .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
                 .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
                 .build())
-
     }
 
     @Inject override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
