@@ -8,6 +8,8 @@ import android.arch.persistence.room.PrimaryKey
 data class FeedItemEntity(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "entryId")
     var entryId: Int = 0,
+    @ColumnInfo(name = "ownerId")
+    var ownerId: Int? = null,
     @ColumnInfo(name = "title")
     var title: String? = null,
     @ColumnInfo(name = "link")
