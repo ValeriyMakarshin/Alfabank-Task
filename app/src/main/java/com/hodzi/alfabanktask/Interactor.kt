@@ -9,9 +9,9 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MainInteractor @Inject constructor(val alfaExecutors: AlfaExecutors,
-                                         val alfaDatabase: AlfaDatabase,
-                                         val api: Api) {
+class Interactor @Inject constructor(val alfaExecutors: AlfaExecutors,
+                                     val alfaDatabase: AlfaDatabase,
+                                     val api: Api) {
 
     fun getList(): Observable<FeedApi> = api.getList()
 }

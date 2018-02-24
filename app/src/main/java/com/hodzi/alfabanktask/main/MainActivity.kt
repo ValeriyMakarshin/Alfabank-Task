@@ -1,7 +1,8 @@
-package com.hodzi.alfabanktask
+package com.hodzi.alfabanktask.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.hodzi.alfabanktask.R
 import com.hodzi.alfabanktask.data.network.Api
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
