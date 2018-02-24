@@ -10,9 +10,9 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    (AndroidInjectionModule::class),
-    (MainModule::class),
-    (NetModule::class)
+    AndroidInjectionModule::class,
+    MainModule::class,
+    NetModule::class
 ])
 interface AppComponent {
     fun inject(alfaApp: AlfaApp)
