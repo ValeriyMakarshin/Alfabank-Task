@@ -27,6 +27,7 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+        disable 'DuplicatePlatformClasses'
     }
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
