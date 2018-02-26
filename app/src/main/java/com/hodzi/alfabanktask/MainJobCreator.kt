@@ -2,11 +2,16 @@ package com.hodzi.alfabanktask
 
 import com.evernote.android.job.Job
 import com.evernote.android.job.JobCreator
+import javax.inject.Inject
+import javax.inject.Provider
+import javax.inject.Singleton
 
-class MainJobCreator : JobCreator {
-    override fun create(tag: String): Job? =
-            when (tag) {
-                FeedJob.TAG -> FeedJob()
-                else -> null
-            }
+@Singleton
+class MainJobCreator @Inject constructor(
+    private val jobs: @JvmSuppressWildcards Map<String, Provider<Job>>) : JobCreator {
+
+    override fun create(tag: String): Job? {
+        val jobProvider = jobs[tag]
+        return jobProvider?.get()
+    }
 }

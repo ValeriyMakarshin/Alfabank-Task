@@ -6,19 +6,18 @@ import com.evernote.android.job.JobRequest
 import javax.inject.Inject
 
 
-class FeedJob : Job() {
-    @Inject lateinit var interactor: Interactor
+class FeedJob @Inject constructor(val interactor: Interactor) : Job() {
 
     companion object {
         const val TAG = "feedJobTag"
 
         fun scheduleJob() {
             JobRequest.Builder(TAG)
-                    .setPeriodic(60_000L)
-                    .setRequiredNetworkType(JobRequest.NetworkType.CONNECTED)
-                    .setUpdateCurrent(true)
-                    .build()
-                    .schedule()
+                .setPeriodic(60_000L)
+                .setRequiredNetworkType(JobRequest.NetworkType.CONNECTED)
+                .setUpdateCurrent(true)
+                .build()
+                .schedule()
         }
     }
 

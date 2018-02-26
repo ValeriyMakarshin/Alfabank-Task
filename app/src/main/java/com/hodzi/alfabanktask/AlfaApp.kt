@@ -2,8 +2,6 @@ package com.hodzi.alfabanktask
 
 import android.app.Activity
 import android.app.Application
-import com.evernote.android.job.JobConfig
-import com.evernote.android.job.JobManager
 import com.facebook.stetho.Stetho
 import com.hodzi.alfabanktask.di.injector.AppInjector
 import dagger.android.AndroidInjector
@@ -25,10 +23,6 @@ class AlfaApp : Application(), HasActivityInjector {
                         .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
                         .build())
 
-
-        JobManager.create(this).addJobCreator(MainJobCreator())
-
-        JobConfig.setAllowSmallerIntervalsForMarshmallow(true)
     }
 
     @Inject
