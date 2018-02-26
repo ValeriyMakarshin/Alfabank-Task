@@ -3,9 +3,12 @@ package com.hodzi.alfabanktask
 import android.util.Log
 import com.evernote.android.job.Job
 import com.evernote.android.job.JobRequest
+import javax.inject.Inject
 
 
 class FeedJob : Job() {
+    @Inject lateinit var interactor: Interactor
+
     companion object {
         const val TAG = "feedJobTag"
 

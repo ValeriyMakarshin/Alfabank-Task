@@ -6,6 +6,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SplashPresenter @Inject constructor(interactor: Interactor) : BasePresenter<SplashView>() {
+class SplashPresenter @Inject constructor(val interactor: Interactor) : BasePresenter<SplashView>() {
 
 }

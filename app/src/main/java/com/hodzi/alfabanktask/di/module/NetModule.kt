@@ -1,4 +1,4 @@
-package com.hodzi.alfabanktask.di
+package com.hodzi.alfabanktask.di.module
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.hodzi.alfabanktask.data.network.Api

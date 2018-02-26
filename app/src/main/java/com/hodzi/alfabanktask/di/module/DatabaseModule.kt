@@ -1,4 +1,4 @@
-package com.hodzi.alfabanktask.di
+package com.hodzi.alfabanktask.di.module
 
 import android.app.Application
 import com.hodzi.alfabanktask.data.local.dao.ChannelDao
@@ -9,9 +9,8 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-
 @Module
-class AppModule {
+class DatabaseModule {
     @Singleton @Provides
     fun provideDb(app: Application, alfaExecutors: AlfaExecutors): AlfaDatabase {
         return AlfaDatabase.getInstance(app, alfaExecutors)

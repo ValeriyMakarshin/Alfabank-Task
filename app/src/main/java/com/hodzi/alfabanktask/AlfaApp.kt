@@ -5,7 +5,7 @@ import android.app.Application
 import com.evernote.android.job.JobConfig
 import com.evernote.android.job.JobManager
 import com.facebook.stetho.Stetho
-import com.hodzi.alfabanktask.di.AppInjector
+import com.hodzi.alfabanktask.di.injector.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
