@@ -2,7 +2,6 @@ package com.hodzi.alfabanktask.di
 
 import android.app.Application
 import com.hodzi.alfabanktask.AlfaApp
-import com.hodzi.alfabanktask.MainModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -12,7 +11,7 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     AppModule::class,
-    MainModule::class,
+    InteractorModule::class,
     NetModule::class
 ])
 interface AppComponent {

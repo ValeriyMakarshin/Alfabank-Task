@@ -45,6 +45,7 @@ dependencies {
     implementation stethoLibs
     implementation supportLibs
     implementation roomLibs
+    implementation jobLibs
 
     kapt kaptLibs
     kapt roomKaptLibs
