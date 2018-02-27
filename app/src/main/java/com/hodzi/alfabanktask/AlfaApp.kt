@@ -4,14 +4,12 @@ import android.app.Activity
 import android.app.Application
 import com.facebook.stetho.Stetho
 import com.hodzi.alfabanktask.di.injector.AppInjector
-import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
 
-class AlfaApp : Application(), HasActivityInjector {
-    @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+class AlfaApp : Application() {
+//    @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     override fun onCreate() {
         super.onCreate()
@@ -25,7 +23,7 @@ class AlfaApp : Application(), HasActivityInjector {
 
     }
 
-    @Inject
-    override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
+//    @Inject
+//    override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
 
 }

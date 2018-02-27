@@ -3,6 +3,7 @@ package com.hodzi.alfabanktask.utils.base
 import android.os.Bundle
 import android.support.annotation.CallSuper
 import android.support.v7.app.AppCompatActivity
+import com.hodzi.alfabanktask.di.injector.AppInjector
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -17,8 +18,6 @@ abstract class BaseActivity<V : BaseView, P : BasePresenter<V>> : AppCompatActiv
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getActivityInfo().layoutId)
-
-        AndroidInjection.inject(this)
 
         getActivityInfo().toolbar?.let { setSupportActionBar(it) }
 
