@@ -12,6 +12,7 @@ ext {
             atsl_runner: '1.0.1',
             atsl_rules : '1.0.1',
             constraint : '1.0.2',
+            androidJob : '1.2.4',
             junit      : '4.12',
             test       : '1.0.1',
             mockitoK   : '1.5.0',
@@ -63,6 +64,9 @@ ext {
     roomKapt = [
             room: "android.arch.persistence.room:compiler:$versions.room",
     ]
+    job = [
+            androidJob: "com.evernote:android-job:$versions.androidJob"
+    ]
     unitTest = [
             testRunner   : "com.android.support.test:runner:$versions.atsl_runner",
             testules     : "com.android.support.test:rules:$versions.atsl_rules",
@@ -84,6 +88,7 @@ ext {
     stethoLibs = stetho.values()
     roomLibs = room.values()
     roomKaptLibs = roomKapt.values()
+    jobLibs = job.values()
     unitTestLibs = unitTest.values()
     androidTestsLibs = androidTests.values() + supportLibs + unitTestLibs
 }
