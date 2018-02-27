@@ -7,7 +7,8 @@ import com.hodzi.alfabanktask.di.injector.AppInjector
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseActivity
 
-class SplashActivity : BaseActivity<SplashView, SplashPresenter>(), SplashView {
+class SplashActivity : BaseActivity<SplashContract.View, SplashContract.Presenter>(),
+        SplashContract.View {
 
     override fun injection() = { AppInjector.inject(this) }
 

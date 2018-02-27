@@ -2,14 +2,12 @@ package com.hodzi.alfabanktask.utils.base
 
 import android.os.Bundle
 import android.support.annotation.CallSuper
-import android.support.annotation.VisibleForTesting
 
-abstract class BasePresenter<V : BaseView> {
+abstract class BasePresenter<V : BaseContract.View> : BaseContract.Presenter<V> {
     var view: V? = null
     private var bundle: Bundle? = null
 
-    @CallSuper
-    open fun attach(view: V, bundle: Bundle? = null) {
+    @CallSuper override fun attach(view: V, bundle: Bundle?) {
         this.view = view
         bundle?.let { parseArguments(it) }
 
@@ -17,24 +15,20 @@ abstract class BasePresenter<V : BaseView> {
     }
 
     @CallSuper
-    @VisibleForTesting
-    open fun parseArguments(extras: Bundle) {
+    override fun parseArguments(extras: Bundle) {
         this.bundle = extras
     }
 
-    @VisibleForTesting
-    open fun loadData() {
+    override fun loadData() {
 
     }
 
     @CallSuper
-    @VisibleForTesting
-    fun detach() {
+    override fun detach() {
         unsubscribeSubscription()
     }
 
-    @VisibleForTesting
-    open fun unsubscribeSubscription() {
+    override fun unsubscribeSubscription() {
 
     }
 }

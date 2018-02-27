@@ -8,9 +8,6 @@ import com.hodzi.alfabanktask.di.module.AppModule
 import com.hodzi.alfabanktask.di.module.FeedModule
 import com.hodzi.alfabanktask.main.MainActivity
 import com.hodzi.alfabanktask.splash.SplashActivity
-import com.hodzi.alfabanktask.utils.base.BaseActivity
-import com.hodzi.alfabanktask.utils.base.BasePresenter
-import com.hodzi.alfabanktask.utils.base.BaseView
 
 object AppInjector {
     lateinit var feedComponent: FeedComponent

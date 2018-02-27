@@ -8,7 +8,9 @@ import com.hodzi.alfabanktask.InteractorImpl
 import com.hodzi.alfabanktask.MainJobCreator
 import com.hodzi.alfabanktask.data.network.Api
 import com.hodzi.alfabanktask.di.scope.FeedScope
+import com.hodzi.alfabanktask.main.MainContract
 import com.hodzi.alfabanktask.main.MainPresenter
+import com.hodzi.alfabanktask.splash.SplashContract
 import com.hodzi.alfabanktask.splash.SplashPresenter
 import com.hodzi.alfabanktask.utils.AlfaDatabase
 import com.hodzi.alfabanktask.utils.AlfaExecutors
@@ -18,11 +20,11 @@ import dagger.Provides
 @Module(includes = [JobsModule::class])
 class FeedModule {
     @Provides @FeedScope
-    fun provideSplashPresenter(interactor: Interactor, jobManager: JobManager): SplashPresenter =
-            SplashPresenter(interactor, jobManager)
+    fun provideSplashPresenter(interactor: Interactor, jobManager: JobManager):
+            SplashContract.Presenter = SplashPresenter(interactor, jobManager)
 
     @Provides @FeedScope
-    fun provideMainPresenter(interactor: Interactor): MainPresenter =
+    fun provideMainPresenter(interactor: Interactor): MainContract.Presenter =
             MainPresenter(interactor)
 
 

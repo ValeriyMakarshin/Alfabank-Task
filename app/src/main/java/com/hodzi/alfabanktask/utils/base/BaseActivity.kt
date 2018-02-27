@@ -5,7 +5,8 @@ import android.support.annotation.CallSuper
 import android.support.v7.app.AppCompatActivity
 import javax.inject.Inject
 
-abstract class BaseActivity<V : BaseView, P : BasePresenter<V>> : AppCompatActivity(), BaseView {
+abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter<V>> :
+        AppCompatActivity(), BaseContract.View {
 
     @Inject lateinit var presenter: P
 
