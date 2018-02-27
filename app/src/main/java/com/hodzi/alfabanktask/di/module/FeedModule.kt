@@ -3,11 +3,11 @@ package com.hodzi.alfabanktask.di.module
 import android.app.Application
 import com.evernote.android.job.JobConfig
 import com.evernote.android.job.JobManager
-import com.hodzi.alfabanktask.Interactor
-import com.hodzi.alfabanktask.InteractorImpl
-import com.hodzi.alfabanktask.MainJobCreator
 import com.hodzi.alfabanktask.data.network.Api
 import com.hodzi.alfabanktask.di.scope.FeedScope
+import com.hodzi.alfabanktask.interactor.Interactor
+import com.hodzi.alfabanktask.interactor.impl.InteractorImpl
+import com.hodzi.alfabanktask.job.MainJobCreator
 import com.hodzi.alfabanktask.main.MainContract
 import com.hodzi.alfabanktask.main.MainPresenter
 import com.hodzi.alfabanktask.splash.SplashContract

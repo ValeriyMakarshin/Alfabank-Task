@@ -1,17 +1,12 @@
 package com.hodzi.alfabanktask.di.module
 
-import android.app.Application
 import com.evernote.android.job.Job
-import com.evernote.android.job.JobConfig
-import com.evernote.android.job.JobManager
-import com.hodzi.alfabanktask.FeedJob
-import com.hodzi.alfabanktask.Interactor
-import com.hodzi.alfabanktask.MainJobCreator
+import com.hodzi.alfabanktask.interactor.Interactor
+import com.hodzi.alfabanktask.job.FeedJob
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
 import dagger.multibindings.StringKey
-import javax.inject.Singleton
 
 @Module
 class JobsModule {

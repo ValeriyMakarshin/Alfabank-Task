@@ -1,7 +1,7 @@
 package com.hodzi.alfabanktask.splash
 
 import android.os.Bundle
-import com.hodzi.alfabanktask.FeedJob
+import com.hodzi.alfabanktask.job.FeedJob
 import com.hodzi.alfabanktask.R
 import com.hodzi.alfabanktask.di.injector.AppInjector
 import com.hodzi.alfabanktask.utils.base.ActivityInfo

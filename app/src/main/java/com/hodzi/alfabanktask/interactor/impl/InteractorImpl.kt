@@ -1,7 +1,8 @@
-package com.hodzi.alfabanktask
+package com.hodzi.alfabanktask.interactor.impl
 
 import com.hodzi.alfabanktask.data.network.Api
 import com.hodzi.alfabanktask.data.network.model.FeedApi
+import com.hodzi.alfabanktask.interactor.Interactor
 import com.hodzi.alfabanktask.utils.AlfaDatabase
 import com.hodzi.alfabanktask.utils.AlfaExecutors
 import io.reactivex.Observable
