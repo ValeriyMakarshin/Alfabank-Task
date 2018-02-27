@@ -8,5 +8,6 @@ class SplashPresenter constructor(val jobManager: JobManager) :
     BasePresenter<SplashContract.View>(), SplashContract.Presenter {
     override fun loadData() {
         FeedJob.startScheduleJob()
+        view?.mainScreen()
     }
 }

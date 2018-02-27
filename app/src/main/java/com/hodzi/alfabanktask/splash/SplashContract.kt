@@ -4,7 +4,11 @@ import com.hodzi.alfabanktask.utils.base.BaseContract
 
 
 interface SplashContract {
-    interface View : BaseContract.View
+    interface Navigator {
+        fun mainScreen()
+    }
+
+    interface View : BaseContract.View, Navigator
 
     interface Presenter : BaseContract.Presenter<View>
 }
