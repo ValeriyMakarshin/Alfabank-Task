@@ -19,7 +19,7 @@ class FeedItemMapper {
         fun transformList(listFeedItemApi: List<FeedItemApi>, channelId: Int = -1):
             List<FeedItemEntity> {
             val list = ArrayList<FeedItemEntity>()
-            listFeedItemApi.forEach { list.add(transform(it)) }
+            listFeedItemApi.forEach { list.add(transform(it, channelId)) }
             return list
         }
     }
