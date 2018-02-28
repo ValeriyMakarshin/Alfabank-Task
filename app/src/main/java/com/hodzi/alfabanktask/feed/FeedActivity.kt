@@ -5,6 +5,7 @@ import com.hodzi.alfabanktask.R
 import com.hodzi.alfabanktask.adapter.FeedAdapter
 import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.di.injector.AppInjector
+import com.hodzi.alfabanktask.utils.NavigatorUtil
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,5 +21,9 @@ class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), 
 
     override fun viewInit() {
         uiFeedItemsRv.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun detailScreen(position: Int, feedItemEntities: List<FeedItemEntity>) {
+        NavigatorUtil.detailFeed(this, position, feedItemEntities)
     }
 }

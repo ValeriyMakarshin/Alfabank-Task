@@ -4,7 +4,12 @@ import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.utils.base.BaseContract
 
 interface FeedContract {
-    interface View : BaseContract.View {
+    interface Navigator {
+        fun detailScreen(position: Int,
+                         feedItemEntities: List<FeedItemEntity>)
+    }
+
+    interface View : BaseContract.View, Navigator {
         fun showList(feedItemEntities: List<FeedItemEntity>)
     }
 
