@@ -1,6 +1,5 @@
 package com.hodzi.alfabanktask.main
 
-import android.util.Log
 import com.hodzi.alfabanktask.interactor.Interactor
 import com.hodzi.alfabanktask.utils.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,7 +12,7 @@ class MainPresenter(val interactor: Interactor) : BasePresenter<MainContract.Vie
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                Log.e("123", "123")
+                view?.showList(it)
             }
     }
 }

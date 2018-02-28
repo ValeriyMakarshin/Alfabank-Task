@@ -6,13 +6,17 @@ import android.support.v7.app.AppCompatActivity
 import javax.inject.Inject
 
 abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter<V>> :
-        AppCompatActivity(), BaseContract.View {
+    AppCompatActivity(), BaseContract.View {
 
     @Inject lateinit var presenter: P
 
     protected abstract fun getActivityInfo(): ActivityInfo
 
     protected abstract fun injection(): () -> Unit
+
+    protected open fun viewInit() {
+
+    }
 
     @CallSuper
     @Suppress("UNCHECKED_CAST")
@@ -27,6 +31,7 @@ abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
 
+        viewInit()
         presenter.attach(this as V, intent.extras)
     }
 
