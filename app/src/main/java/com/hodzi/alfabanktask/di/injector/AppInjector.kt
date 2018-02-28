@@ -8,6 +8,7 @@ import com.hodzi.alfabanktask.di.module.AppModule
 import com.hodzi.alfabanktask.di.module.FeedModule
 import com.hodzi.alfabanktask.feed.FeedActivity
 import com.hodzi.alfabanktask.feed.detail.DetailFeedActivity
+import com.hodzi.alfabanktask.feed.detail.content.ContentFeedFragment
 import com.hodzi.alfabanktask.splash.SplashActivity
 
 object AppInjector {
@@ -25,6 +26,9 @@ object AppInjector {
         feedComponent.inject(detailFeedActivity)
     }
 
+    fun inject(contentFeedFragment: ContentFeedFragment) {
+        feedComponent.inject(contentFeedFragment)
+    }
 
     fun init(alfaApp: AlfaApp) {
         val appComponent: AppComponent = DaggerAppComponent

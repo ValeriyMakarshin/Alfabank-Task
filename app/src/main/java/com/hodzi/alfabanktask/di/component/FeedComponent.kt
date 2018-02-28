@@ -4,6 +4,7 @@ import com.hodzi.alfabanktask.di.module.FeedModule
 import com.hodzi.alfabanktask.di.scope.FeedScope
 import com.hodzi.alfabanktask.feed.FeedActivity
 import com.hodzi.alfabanktask.feed.detail.DetailFeedActivity
+import com.hodzi.alfabanktask.feed.detail.content.ContentFeedFragment
 import com.hodzi.alfabanktask.splash.SplashActivity
 import dagger.Subcomponent
 import dagger.android.AndroidInjectionModule
@@ -17,4 +18,6 @@ interface FeedComponent {
     fun inject(feedActivity: FeedActivity)
 
     fun inject(detailFeedActivity: DetailFeedActivity)
+
+    fun inject(contentFeedFragment: ContentFeedFragment)
 }

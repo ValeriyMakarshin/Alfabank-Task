@@ -1,9 +1,14 @@
 package com.hodzi.alfabanktask.data.local
 
+import android.annotation.SuppressLint
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+@SuppressLint("ParcelCreator")
+@Parcelize
 @Entity(tableName = "feed_items")
 data class FeedItemEntity(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "entryId")
@@ -18,4 +23,4 @@ data class FeedItemEntity(
     var description: String? = null,
     @ColumnInfo(name = "guid")
     var guid: String? = null
-)
+) : Parcelable

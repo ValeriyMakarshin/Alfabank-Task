@@ -34,6 +34,10 @@ android {
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 apply from: 'deps.gradle'
 
 dependencies {
