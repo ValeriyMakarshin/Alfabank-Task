@@ -14,7 +14,7 @@ abstract class BaseHolder<T : Any>(itemView: View) : RecyclerView.ViewHolder(ite
     }
 
     open fun setClickListener(onClickListener: OnClickListener<T>?) {
-        itemView.setOnClickListener { onClickListener?.onClick(item) }
+        itemView.setOnClickListener { onClickListener?.onClick(layoutPosition, item) }
     }
 
     abstract fun onDraw(item: T)

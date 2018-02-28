@@ -13,5 +13,7 @@ interface FeedContract {
         fun showList(feedItemEntities: List<FeedItemEntity>)
     }
 
-    interface Presenter : BaseContract.Presenter<View>
+    interface Presenter : BaseContract.Presenter<View> {
+        var list: List<FeedItemEntity>
+    }
 }
