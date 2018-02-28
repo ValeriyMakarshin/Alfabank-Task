@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.hodzi.alfabanktask.main.MainActivity"
+    tools:context="com.hodzi.alfabanktask.feed.FeedActivity"
     tools:layout_editor_absoluteY="25dp"
     >
 

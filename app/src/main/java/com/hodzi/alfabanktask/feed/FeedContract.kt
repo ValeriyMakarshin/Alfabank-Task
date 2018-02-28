@@ -1,9 +1,9 @@
-package com.hodzi.alfabanktask.main
+package com.hodzi.alfabanktask.feed
 
 import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.utils.base.BaseContract
 
-interface MainContract {
+interface FeedContract {
     interface View : BaseContract.View {
         fun showList(feedItemEntities: List<FeedItemEntity>)
     }

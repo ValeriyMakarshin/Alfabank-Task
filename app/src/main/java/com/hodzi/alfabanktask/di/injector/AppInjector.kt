@@ -6,7 +6,8 @@ import com.hodzi.alfabanktask.di.component.DaggerAppComponent
 import com.hodzi.alfabanktask.di.component.FeedComponent
 import com.hodzi.alfabanktask.di.module.AppModule
 import com.hodzi.alfabanktask.di.module.FeedModule
-import com.hodzi.alfabanktask.main.MainActivity
+import com.hodzi.alfabanktask.feed.FeedActivity
+import com.hodzi.alfabanktask.feed.detail.DetailFeedActivity
 import com.hodzi.alfabanktask.splash.SplashActivity
 
 object AppInjector {
@@ -16,15 +17,20 @@ object AppInjector {
         feedComponent.inject(splashActivity)
     }
 
-    fun inject(mainActivity: MainActivity) {
-        feedComponent.inject(mainActivity)
+    fun inject(feedActivity: FeedActivity) {
+        feedComponent.inject(feedActivity)
     }
+
+    fun inject(detailFeedActivity: DetailFeedActivity) {
+        feedComponent.inject(detailFeedActivity)
+    }
+
 
     fun init(alfaApp: AlfaApp) {
         val appComponent: AppComponent = DaggerAppComponent
-                .builder()
-                .appModule(AppModule(alfaApp))
-                .build()
+            .builder()
+            .appModule(AppModule(alfaApp))
+            .build()
 
         appComponent.inject(alfaApp)
 

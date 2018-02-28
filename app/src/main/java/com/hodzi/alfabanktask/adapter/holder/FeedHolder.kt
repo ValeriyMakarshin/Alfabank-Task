@@ -8,11 +8,11 @@ import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.utils.base.BaseHolder
 import kotlinx.android.synthetic.main.item_feed_item.view.*
 
-class MainHolder(itemView: View) : BaseHolder<FeedItemEntity>(itemView) {
+class FeedHolder(itemView: View) : BaseHolder<FeedItemEntity>(itemView) {
     companion object {
-        fun creator(): (ViewGroup?) -> MainHolder =
+        fun creator(): (ViewGroup?) -> FeedHolder =
             { viewGroup ->
-                MainHolder(LayoutInflater.from(viewGroup?.context)
+                FeedHolder(LayoutInflater.from(viewGroup?.context)
                     .inflate(R.layout.item_feed_item, viewGroup, false))
             }
     }

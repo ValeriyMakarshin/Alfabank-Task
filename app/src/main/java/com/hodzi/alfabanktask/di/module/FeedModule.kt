@@ -8,8 +8,8 @@ import com.hodzi.alfabanktask.di.scope.FeedScope
 import com.hodzi.alfabanktask.interactor.Interactor
 import com.hodzi.alfabanktask.interactor.impl.InteractorImpl
 import com.hodzi.alfabanktask.job.MainJobCreator
-import com.hodzi.alfabanktask.main.MainContract
-import com.hodzi.alfabanktask.main.MainPresenter
+import com.hodzi.alfabanktask.feed.FeedContract
+import com.hodzi.alfabanktask.feed.FeedPresenter
 import com.hodzi.alfabanktask.splash.SplashContract
 import com.hodzi.alfabanktask.splash.SplashPresenter
 import com.hodzi.alfabanktask.utils.AlfaDatabase
@@ -24,8 +24,8 @@ class FeedModule {
             SplashContract.Presenter = SplashPresenter(jobManager)
 
     @Provides @FeedScope
-    fun provideMainPresenter(interactor: Interactor): MainContract.Presenter =
-            MainPresenter(interactor)
+    fun provideMainPresenter(interactor: Interactor): FeedContract.Presenter =
+            FeedPresenter(interactor)
 
 
     @Provides @FeedScope

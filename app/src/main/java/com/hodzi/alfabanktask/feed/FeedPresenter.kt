@@ -1,12 +1,12 @@
-package com.hodzi.alfabanktask.main
+package com.hodzi.alfabanktask.feed
 
 import com.hodzi.alfabanktask.interactor.Interactor
 import com.hodzi.alfabanktask.utils.base.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class MainPresenter(val interactor: Interactor) : BasePresenter<MainContract.View>(),
-    MainContract.Presenter {
+class FeedPresenter(val interactor: Interactor) : BasePresenter<FeedContract.View>(),
+    FeedContract.Presenter {
     override fun loadData() {
         interactor.getDbList()
             .subscribeOn(Schedulers.io())
