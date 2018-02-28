@@ -20,8 +20,8 @@ import dagger.Provides
 @Module(includes = [JobsModule::class])
 class FeedModule {
     @Provides @FeedScope
-    fun provideSplashPresenter(interactor: Interactor, jobManager: JobManager):
-            SplashContract.Presenter = SplashPresenter(interactor, jobManager)
+    fun provideSplashPresenter(jobManager: JobManager):
+            SplashContract.Presenter = SplashPresenter(jobManager)
 
     @Provides @FeedScope
     fun provideMainPresenter(interactor: Interactor): MainContract.Presenter =

@@ -1,9 +1,12 @@
 package com.hodzi.alfabanktask.job
 
-import android.util.Log
 import com.evernote.android.job.Job
 import com.evernote.android.job.JobRequest
+import com.hodzi.alfabanktask.data.local.FeedItemEntity
+import com.hodzi.alfabanktask.data.mapper.ChannelMapper
 import com.hodzi.alfabanktask.interactor.Interactor
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 
@@ -11,9 +14,9 @@ class FeedJob @Inject constructor(val interactor: Interactor) : Job() {
 
     companion object {
         const val TAG = "feedJobTag"
-        const val PERIODIC_TIME_MS = 60_000L
+        private const val PERIODIC_TIME_MS = 60_000L
 
-        fun scheduleJob() {
+        fun startScheduleJob() {
             JobRequest.Builder(TAG)
                 .setPeriodic(PERIODIC_TIME_MS)
                 .setRequiredNetworkType(JobRequest.NetworkType.CONNECTED)
@@ -24,7 +27,16 @@ class FeedJob @Inject constructor(val interactor: Interactor) : Job() {
     }
 
     override fun onRunJob(params: Params): Result {
-        Log.d("132", "132")
+        interactor.getList()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .map {
+                val (_, list) = it.channelApi?.let { it1 -> ChannelMapper.transform(it1) }
+                    ?: Pair(Any(), ArrayList<FeedItemEntity>())
+                list
+            }
+            .subscribe({ interactor.saveFeed(it) })
+
         return Result.SUCCESS
     }
 
