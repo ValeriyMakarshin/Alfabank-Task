@@ -8,7 +8,7 @@ import com.hodzi.alfabanktask.feed.detail.DetailFeedActivity
 
 object NavigatorUtil {
     fun mainScreen(context: Context) {
-        context.startActivity(clearStack(Intent(context, FeedActivity::class.java)))
+        context.startActivity(Intent(context, FeedActivity::class.java))
     }
 
     fun detailFeed(context: Context, position: Int,
