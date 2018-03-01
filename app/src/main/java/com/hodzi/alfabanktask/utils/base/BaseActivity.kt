@@ -39,4 +39,8 @@ abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter
         presenter.detach()
         super.onStop()
     }
+
+    override fun setTitle(title: String) {
+        getActivityInfo().toolbar?.title = title
+    }
 }

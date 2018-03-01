@@ -7,6 +7,7 @@ import com.hodzi.alfabanktask.di.injector.AppInjector
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_content_feed.*
+import kotlinx.android.synthetic.main.view_toolbar.*
 
 
 class ContentFeedFragment :
@@ -25,7 +26,8 @@ class ContentFeedFragment :
         }
     }
 
-    override fun getActivityInfo(): ActivityInfo = ActivityInfo(R.layout.fragment_content_feed)
+    override fun getActivityInfo(): ActivityInfo =
+        ActivityInfo(R.layout.fragment_content_feed, toolbar)
 
     override fun injection(): () -> Unit = { AppInjector.inject(this) }
 
