@@ -4,7 +4,7 @@
     >
     <item android:drawable="@android:color/white" />
     <item
-        android:drawable="@drawable/vectorpaint"
+        android:drawable="@drawable/ic_logo_320dp"
         android:gravity="center"
         />
 </layer-list>
