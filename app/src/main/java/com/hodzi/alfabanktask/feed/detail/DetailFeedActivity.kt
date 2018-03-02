@@ -10,6 +10,7 @@ import com.hodzi.alfabanktask.di.injector.AppInjector
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail_feed.*
+import kotlinx.android.synthetic.main.view_toolbar.*
 
 
 class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContract.Presenter>(),
@@ -36,9 +37,8 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
         }
     }
 
-    override fun getActivityInfo(): ActivityInfo = ActivityInfo(R.layout.activity_detail_feed)
+    override fun getActivityInfo(): ActivityInfo = ActivityInfo(R.layout.activity_detail_feed, toolbar)
 
     override fun injection(): () -> Unit = { AppInjector.inject(this) }
-
 
 }
