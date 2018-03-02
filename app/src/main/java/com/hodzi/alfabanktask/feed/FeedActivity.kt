@@ -10,9 +10,11 @@ import com.hodzi.alfabanktask.utils.OnClickListener
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.view_toolbar.*
 
 class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), FeedContract.View,
     OnClickListener<FeedItemEntity> {
+
     override fun showList(feedItemEntities: List<FeedItemEntity>) {
         uiFeedItemsRv.adapter = FeedAdapter(feedItemEntities, this)
     }
@@ -23,6 +25,7 @@ class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), 
 
     override fun viewInit() {
         uiFeedItemsRv.layoutManager = LinearLayoutManager(this)
+        uiFeedItemsSrl.setOnRefreshListener { presenter.refresh() }
     }
 
     override fun detailScreen(position: Int, feedItemEntities: List<FeedItemEntity>) {
@@ -34,4 +37,13 @@ class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), 
     }
 
     override fun needShowHomeButton(): Boolean = false
+
+    override fun showRefresh() {
+        uiFeedItemsSrl.isRefreshing = true
+    }
+
+    override fun hideRefresh() {
+        uiFeedItemsSrl.isRefreshing = false
+    }
+
 }

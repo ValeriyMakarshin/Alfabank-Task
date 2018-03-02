@@ -8,6 +8,7 @@ import com.hodzi.alfabanktask.R
 import com.hodzi.alfabanktask.adapter.DetailFeedPagerAdapter
 import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.di.injector.AppInjector
+import com.hodzi.alfabanktask.utils.HtmlUtil
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_detail_feed.*
@@ -54,7 +55,9 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
             }
 
             override fun onPageSelected(position: Int) {
-                presenter.array[position].title?.let { setTitle(it) }
+                presenter.array[position].title?.let {
+                    setTitle(HtmlUtil.fromHtmlFormat(it).toString())
+                }
             }
 
         })

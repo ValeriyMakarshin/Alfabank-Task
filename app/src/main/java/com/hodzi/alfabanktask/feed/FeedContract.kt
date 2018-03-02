@@ -11,9 +11,16 @@ interface FeedContract {
 
     interface View : BaseContract.View, Navigator {
         fun showList(feedItemEntities: List<FeedItemEntity>)
+
+        fun showRefresh()
+
+        fun hideRefresh()
     }
 
     interface Presenter : BaseContract.Presenter<View> {
         var list: List<FeedItemEntity>
+
+        fun refresh()
+
     }
 }
