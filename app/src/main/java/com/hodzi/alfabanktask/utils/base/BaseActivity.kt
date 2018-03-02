@@ -16,7 +16,6 @@ abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter
     protected abstract fun injection(): () -> Unit
 
     protected open fun viewInit() {
-
     }
 
     @CallSuper
@@ -43,10 +42,6 @@ abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter
         super.onStop()
     }
 
-    override fun setTitle(title: String) {
-        getActivityInfo().toolbar?.title = title
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
@@ -60,4 +55,8 @@ abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter
     }
 
     open fun needShowHomeButton(): Boolean = true
+
+    override fun setTitle(title: String) {
+        getActivityInfo().toolbar?.title = title
+    }
 }
