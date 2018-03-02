@@ -17,7 +17,8 @@
         <activity
             android:name="com.hodzi.alfabanktask.splash.SplashActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Launcher"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
