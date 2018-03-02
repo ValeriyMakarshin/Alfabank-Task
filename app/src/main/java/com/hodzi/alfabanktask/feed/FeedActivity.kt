@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), FeedContract.View,
     OnClickListener<FeedItemEntity> {
+
     override fun showList(feedItemEntities: List<FeedItemEntity>) {
         uiFeedItemsRv.adapter = FeedAdapter(feedItemEntities, this)
     }
@@ -35,4 +36,13 @@ class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), 
     }
 
     override fun needShowHomeButton(): Boolean = false
+
+    override fun showRefresh() {
+        uiFeedItemsSrl.isRefreshing = true
+    }
+
+    override fun hideRefresh() {
+        uiFeedItemsSrl.isRefreshing = false
+    }
+
 }

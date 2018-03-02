@@ -22,6 +22,6 @@ class FeedPresenter(val interactor: Interactor) : BasePresenter<FeedContract.Vie
     }
 
     override fun refresh() {
-        interactor.refresh()
+        interactor.refresh({ view?.showRefresh() }, { view?.hideRefresh() })
     }
 }
