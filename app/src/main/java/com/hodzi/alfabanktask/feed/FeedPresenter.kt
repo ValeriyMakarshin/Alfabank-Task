@@ -20,4 +20,8 @@ class FeedPresenter(val interactor: Interactor) : BasePresenter<FeedContract.Vie
                 view?.showList(it)
             }
     }
+
+    override fun refresh() {
+        interactor.refresh()
+    }
 }

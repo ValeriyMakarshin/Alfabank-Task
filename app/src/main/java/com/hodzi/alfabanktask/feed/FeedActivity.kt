@@ -23,6 +23,7 @@ class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), 
 
     override fun viewInit() {
         uiFeedItemsRv.layoutManager = LinearLayoutManager(this)
+        uiFeedItemsSrl.setOnRefreshListener { presenter.refresh() }
     }
 
     override fun detailScreen(position: Int, feedItemEntities: List<FeedItemEntity>) {

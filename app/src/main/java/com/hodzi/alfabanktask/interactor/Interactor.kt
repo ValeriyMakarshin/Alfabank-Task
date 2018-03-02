@@ -12,4 +12,5 @@ interface Interactor {
 
     fun getDbList(): Flowable<List<FeedItemEntity>>
 
+    fun refresh()
 }

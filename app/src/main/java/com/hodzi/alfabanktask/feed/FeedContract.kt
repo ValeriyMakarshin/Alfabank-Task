@@ -15,5 +15,8 @@ interface FeedContract {
 
     interface Presenter : BaseContract.Presenter<View> {
         var list: List<FeedItemEntity>
+
+        fun refresh()
+
     }
 }
