@@ -15,6 +15,6 @@ class SplashActivity : BaseActivity<SplashContract.View, SplashContract.Presente
 
     override fun injection() = { AppInjector.inject(this) }
 
-    override fun getActivityInfo(): ActivityInfo = ActivityInfo(R.layout.splash_activity)
+    override fun getActivityInfo(): ActivityInfo = ActivityInfo(R.layout.activity_splash)
 
 }

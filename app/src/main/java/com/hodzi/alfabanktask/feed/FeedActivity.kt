@@ -10,6 +10,7 @@ import com.hodzi.alfabanktask.utils.OnClickListener
 import com.hodzi.alfabanktask.utils.base.ActivityInfo
 import com.hodzi.alfabanktask.utils.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.view_toolbar.*
 
 class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), FeedContract.View,
     OnClickListener<FeedItemEntity> {
