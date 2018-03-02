@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 def versionMajor = 0
 def versionMinor = 0
 def versionPatch = 0
-def versionBuild = 8
+def versionBuild = 9
 def versionSuffix = versionBuild > 0 ? "-beta" : ""
 
 android {
