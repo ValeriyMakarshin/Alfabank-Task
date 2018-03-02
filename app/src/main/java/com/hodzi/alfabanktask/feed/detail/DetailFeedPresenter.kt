@@ -5,8 +5,9 @@ import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.utils.base.BasePresenter
 
 class DetailFeedPresenter : BasePresenter<DetailFeedContract.View>(), DetailFeedContract.Presenter {
+    override lateinit var array: Array<FeedItemEntity>
+
     var position: Int = 0
-    lateinit var array: Array<FeedItemEntity>
 
     override fun parseArguments(extras: Bundle) {
         super.parseArguments(extras)

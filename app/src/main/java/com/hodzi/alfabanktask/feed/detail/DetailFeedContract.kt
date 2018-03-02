@@ -10,5 +10,9 @@ interface DetailFeedContract {
         fun focusPosition(position: Int)
     }
 
-    interface Presenter : BaseContract.Presenter<View>
+    interface Presenter : BaseContract.Presenter<View> {
+        val array: Array<FeedItemEntity>
+            get() = ArrayList<FeedItemEntity>().toTypedArray()
+
+    }
 }

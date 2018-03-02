@@ -14,6 +14,12 @@ class ContentFeedPresenter : BasePresenter<ContentFeedContract.View>(),
         feedItemEntity = extras.getParcelable(ContentFeedFragment.EXTRA_FEED_ITEM)
     }
 
+    override fun attach(view: ContentFeedContract.View, bundle: Bundle?) {
+        super.attach(view, bundle)
+
+        feedItemEntity.title?.let { view.setTitle(it) }
+    }
+
     override fun loadData() {
         feedItemEntity.description?.let { view?.setData(it) }
     }

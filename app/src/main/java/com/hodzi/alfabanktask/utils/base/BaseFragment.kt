@@ -36,4 +36,8 @@ abstract class BaseFragment<in V : BaseContract.View, P : BaseContract.Presenter
 
         presenter.attach(this as V, arguments)
     }
+
+    override fun setTitle(title: String) {
+        getActivityInfo().toolbar?.title = title
+    }
 }

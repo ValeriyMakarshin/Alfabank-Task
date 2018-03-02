@@ -33,4 +33,5 @@ class FeedActivity : BaseActivity<FeedContract.View, FeedContract.Presenter>(), 
         detailScreen(position, presenter.list)
     }
 
+    override fun needShowHomeButton(): Boolean = false
 }
