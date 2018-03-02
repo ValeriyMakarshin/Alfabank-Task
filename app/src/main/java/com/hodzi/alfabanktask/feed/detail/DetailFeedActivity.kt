@@ -29,7 +29,8 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
         }
     }
 
-    override fun getActivityInfo(): ActivityInfo = ActivityInfo(R.layout.activity_detail_feed, toolbar)
+    override fun getActivityInfo(): ActivityInfo =
+        ActivityInfo(R.layout.activity_detail_feed, toolbar)
 
     override fun injection(): () -> Unit = { AppInjector.inject(this) }
 
