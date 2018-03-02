@@ -5,11 +5,15 @@ import com.evernote.android.job.JobConfig
 import com.evernote.android.job.JobManager
 import com.hodzi.alfabanktask.data.network.Api
 import com.hodzi.alfabanktask.di.scope.FeedScope
+import com.hodzi.alfabanktask.feed.FeedContract
+import com.hodzi.alfabanktask.feed.FeedPresenter
+import com.hodzi.alfabanktask.feed.detail.DetailFeedContract
+import com.hodzi.alfabanktask.feed.detail.DetailFeedPresenter
+import com.hodzi.alfabanktask.feed.detail.content.ContentFeedContract
+import com.hodzi.alfabanktask.feed.detail.content.ContentFeedPresenter
 import com.hodzi.alfabanktask.interactor.Interactor
 import com.hodzi.alfabanktask.interactor.impl.InteractorImpl
 import com.hodzi.alfabanktask.job.MainJobCreator
-import com.hodzi.alfabanktask.main.MainContract
-import com.hodzi.alfabanktask.main.MainPresenter
 import com.hodzi.alfabanktask.splash.SplashContract
 import com.hodzi.alfabanktask.splash.SplashPresenter
 import com.hodzi.alfabanktask.utils.AlfaDatabase
@@ -20,12 +24,22 @@ import dagger.Provides
 @Module(includes = [JobsModule::class])
 class FeedModule {
     @Provides @FeedScope
-    fun provideSplashPresenter(jobManager: JobManager):
-            SplashContract.Presenter = SplashPresenter(jobManager)
+    fun provideContentFeedPresenter():
+        ContentFeedContract.Presenter = ContentFeedPresenter()
+
 
     @Provides @FeedScope
-    fun provideMainPresenter(interactor: Interactor): MainContract.Presenter =
-            MainPresenter(interactor)
+    fun provideDetailFeedPresenter():
+        DetailFeedContract.Presenter = DetailFeedPresenter()
+
+
+    @Provides @FeedScope
+    fun provideSplashPresenter(jobManager: JobManager):
+        SplashContract.Presenter = SplashPresenter(jobManager)
+
+    @Provides @FeedScope
+    fun provideMainPresenter(interactor: Interactor): FeedContract.Presenter =
+        FeedPresenter(interactor)
 
 
     @Provides @FeedScope
