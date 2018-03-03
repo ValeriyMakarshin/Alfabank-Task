@@ -7,7 +7,7 @@ import io.reactivex.Flowable
 
 @Dao
 abstract class FeedItemDao {
-    @Query("SELECT * FROM feed_items ORDER BY bookmark")
+    @Query("SELECT * FROM feed_items ORDER BY bookmark DESC")
     abstract fun loadAllFeedItems(): Flowable<List<FeedItemEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
