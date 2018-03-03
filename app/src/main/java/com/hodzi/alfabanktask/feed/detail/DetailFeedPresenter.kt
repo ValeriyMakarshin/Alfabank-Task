@@ -24,6 +24,7 @@ class DetailFeedPresenter(val interactor: Interactor) :
 
         view.showList(array)
         view.focusPosition(position)
+        view.setTitle(array[position].title)
     }
 
     override fun usedBookmark(position: Int): Boolean = array[position].bookmark

@@ -10,6 +10,7 @@ class FeedJob @Inject constructor(val interactor: Interactor) : Job() {
 
     companion object {
         const val TAG = "feedJobTag"
+        //TODO: change period
         private const val PERIODIC_TIME_MS = 60_000L
 
         fun startScheduleJob() {
