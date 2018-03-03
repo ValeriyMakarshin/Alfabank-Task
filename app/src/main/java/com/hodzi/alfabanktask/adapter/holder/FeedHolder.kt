@@ -19,7 +19,11 @@ class FeedHolder(itemView: View) : BaseHolder<FeedItemEntity>(itemView) {
     }
 
     override fun onDraw(item: FeedItemEntity) {
-        itemView.uiFeedItemsTitleTv.text = item.title?.let { HtmlUtil.fromHtmlFormat(it) }
-
+        itemView.uiFeedItemsTitleTv.text = item.title.let { HtmlUtil.fromHtmlFormat(it) }
+        itemView.uiFeedItemBookmarkV.visibility = if (item.bookmark) {
+            View.VISIBLE
+        } else {
+            View.INVISIBLE
+        }
     }
 }

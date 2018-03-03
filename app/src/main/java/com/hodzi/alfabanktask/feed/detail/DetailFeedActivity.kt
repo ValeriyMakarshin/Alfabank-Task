@@ -93,7 +93,6 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
         }
     }
 
-
     @DrawableRes private fun getIcon(usedBookmark: Boolean): Int {
         return if (usedBookmark) {
             R.drawable.ic_bookmark_border_24dp
