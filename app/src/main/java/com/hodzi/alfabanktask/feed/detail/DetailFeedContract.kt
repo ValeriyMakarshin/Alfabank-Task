@@ -14,5 +14,13 @@ interface DetailFeedContract {
         val array: Array<FeedItemEntity>
             get() = ArrayList<FeedItemEntity>().toTypedArray()
 
+        fun usedBookmark(position: Int): Boolean
+
+        /**
+         * This method is called when user want removed or added item in bookmarks.
+         *
+         * @return boolean Return false if item was removed from bookmarks, true - added
+         */
+        fun switchUsedBookmark(position: Int): Boolean
     }
 }

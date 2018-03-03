@@ -24,11 +24,7 @@ class InteractorImpl(val alfaExecutors: AlfaExecutors,
     override fun getList(): Observable<FeedApi> = api.getList()
 
     override fun saveFeed(list: List<FeedItemEntity>) {
-        alfaExecutors.diskIO.execute({
-            alfaDatabase.runInTransaction({
-                alfaDatabase.feedItemDao().updateFeedItem(list)
-            })
-        })
+        runTransaction { alfaDatabase.feedItemDao().updateFeedItem(list) }
     }
 
     override fun refresh(onSubscribe: (Disposable) -> Unit,
@@ -44,5 +40,17 @@ class InteractorImpl(val alfaExecutors: AlfaExecutors,
                 list
             }
             .subscribe({ saveFeed(it) })
+    }
+
+    override fun updateBookmarkFeedItem(title: String, newBookmark: Boolean) {
+        runTransaction { alfaDatabase.feedItemDao().updateBookmark(title, newBookmark) }
+    }
+
+    private fun runTransaction(function: () -> Unit) {
+        alfaExecutors.diskIO.execute({
+            alfaDatabase.runInTransaction({
+                function.invoke()
+            })
+        })
     }
 }

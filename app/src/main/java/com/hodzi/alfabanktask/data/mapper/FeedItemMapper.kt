@@ -9,7 +9,7 @@ class FeedItemMapper {
         fun transform(feedItemApi: FeedItemApi, channelId: Int = -1): FeedItemEntity {
             val feedItemEntity = FeedItemEntity()
             feedItemEntity.ownerId = channelId
-            feedItemEntity.title = feedItemApi.title
+            feedItemApi.title?.let { feedItemEntity.title = it }
             feedItemEntity.link = feedItemApi.link
             feedItemEntity.description = feedItemApi.description
             feedItemEntity.guid = feedItemApi.guid
