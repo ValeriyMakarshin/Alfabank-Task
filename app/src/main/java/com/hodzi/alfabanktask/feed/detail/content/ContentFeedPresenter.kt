@@ -6,7 +6,6 @@ import com.hodzi.alfabanktask.utils.base.BasePresenter
 
 class ContentFeedPresenter : BasePresenter<ContentFeedContract.View>(),
     ContentFeedContract.Presenter {
-
     lateinit var feedItemEntity: FeedItemEntity
 
     override fun parseArguments(extras: Bundle) {
@@ -17,13 +16,12 @@ class ContentFeedPresenter : BasePresenter<ContentFeedContract.View>(),
     override fun attach(view: ContentFeedContract.View, bundle: Bundle?) {
         super.attach(view, bundle)
 
-        feedItemEntity.title?.let { view.setTitle(it) }
+        view.setTitle(feedItemEntity.title)
     }
 
     override fun loadData() {
         feedItemEntity.description?.let { view?.setData(it) }
     }
-
 
 }
 

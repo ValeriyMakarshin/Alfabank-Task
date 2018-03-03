@@ -21,4 +21,7 @@ abstract class FeedItemDao {
         deleteAll()
         insertAll(feedItemEntities)
     }
+
+    @Query("UPDATE feed_items SET bookmark = :newBookmark WHERE title = :title")
+    abstract fun updateBookmark(title: String, newBookmark: Boolean)
 }

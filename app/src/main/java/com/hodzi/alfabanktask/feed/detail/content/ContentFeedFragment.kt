@@ -35,4 +35,9 @@ class ContentFeedFragment :
         uiFeedWv.loadData(data, "text/html; charset=utf-8", "UTF-8")
     }
 
+    override fun viewInit() {
+        super.viewInit()
+        setHasOptionsMenu(true)
+    }
+
 }

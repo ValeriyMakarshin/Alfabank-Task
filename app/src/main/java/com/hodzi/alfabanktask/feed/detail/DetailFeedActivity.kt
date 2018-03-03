@@ -3,7 +3,12 @@ package com.hodzi.alfabanktask.feed.detail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.annotation.DrawableRes
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import com.hodzi.alfabanktask.R
 import com.hodzi.alfabanktask.adapter.DetailFeedPagerAdapter
 import com.hodzi.alfabanktask.data.local.FeedItemEntity
@@ -59,7 +64,43 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
                     setTitle(HtmlUtil.fromHtmlFormat(it).toString())
                 }
             }
-
         })
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_detail_feed, menu)
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        Log.i("132", "111")
+        menu?.findItem(R.id.action_bookmark)?.icon =
+            ContextCompat.getDrawable(this, getIcon(presenter.usedBookmark(
+                uiFeedItemsVp.currentItem
+            )))
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_bookmark -> {
+                val newBoolean = presenter.switchUsedBookmark(uiFeedItemsVp.currentItem)
+                item.icon = ContextCompat.getDrawable(this, getIcon(newBoolean))
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
+    @DrawableRes private fun getIcon(usedBookmark: Boolean): Int {
+        return if (usedBookmark) {
+            R.drawable.ic_bookmark_border_24dp
+        } else {
+            R.drawable.ic_bookmark_24dp
+        }
+
+    }
+
 }

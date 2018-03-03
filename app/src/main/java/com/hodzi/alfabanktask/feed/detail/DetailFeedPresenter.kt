@@ -2,9 +2,11 @@ package com.hodzi.alfabanktask.feed.detail
 
 import android.os.Bundle
 import com.hodzi.alfabanktask.data.local.FeedItemEntity
+import com.hodzi.alfabanktask.interactor.Interactor
 import com.hodzi.alfabanktask.utils.base.BasePresenter
 
-class DetailFeedPresenter : BasePresenter<DetailFeedContract.View>(), DetailFeedContract.Presenter {
+class DetailFeedPresenter(val interactor: Interactor) :
+    BasePresenter<DetailFeedContract.View>(), DetailFeedContract.Presenter {
     override lateinit var array: Array<FeedItemEntity>
 
     var position: Int = 0
@@ -23,4 +25,14 @@ class DetailFeedPresenter : BasePresenter<DetailFeedContract.View>(), DetailFeed
         view.showList(array)
         view.focusPosition(position)
     }
+
+    override fun usedBookmark(position: Int): Boolean = array[position].bookmark
+
+    override fun switchUsedBookmark(position: Int): Boolean {
+        val bookmark = !usedBookmark(position)
+        interactor.updateBookmarkFeedItem(array[position].title, bookmark)
+        array[position].bookmark = bookmark
+        return bookmark
+    }
+
 }

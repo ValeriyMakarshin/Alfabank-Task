@@ -15,4 +15,6 @@ interface Interactor {
 
     fun refresh(onSubscribe: (Disposable) -> Unit = {},
                 onTerminate: () -> Unit = {})
+
+    fun updateBookmarkFeedItem(title: String, newBookmark: Boolean)
 }

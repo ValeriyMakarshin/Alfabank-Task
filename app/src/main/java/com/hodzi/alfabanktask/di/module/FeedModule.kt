@@ -27,10 +27,9 @@ class FeedModule {
     fun provideContentFeedPresenter():
         ContentFeedContract.Presenter = ContentFeedPresenter()
 
-
     @Provides @FeedScope
-    fun provideDetailFeedPresenter():
-        DetailFeedContract.Presenter = DetailFeedPresenter()
+    fun provideDetailFeedPresenter(interactor: Interactor):
+        DetailFeedContract.Presenter = DetailFeedPresenter(interactor)
 
 
     @Provides @FeedScope

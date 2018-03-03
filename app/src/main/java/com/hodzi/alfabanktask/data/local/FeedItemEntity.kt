@@ -11,12 +11,12 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity(tableName = "feed_items")
 data class FeedItemEntity(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "entryId")
-    var entryId: Int = 0,
     @ColumnInfo(name = "ownerId")
     var ownerId: Int? = null,
-    @ColumnInfo(name = "title")
-    var title: String? = null,
+    @PrimaryKey @ColumnInfo(name = "title")
+    var title: String = "",
+    @ColumnInfo(name = "bookmark")
+    var bookmark: Boolean = false,
     @ColumnInfo(name = "link")
     var link: String? = null,
     @ColumnInfo(name = "description")
