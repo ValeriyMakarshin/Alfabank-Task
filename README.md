@@ -1,6 +1,8 @@
 # Alfabank-task [![CircleCI](https://circleci.com/gh/ValeriyMakarshin/alfabank-task/tree/master.svg?style=svg)](https://circleci.com/gh/ValeriyMakarshin/alfabank-task/tree/master)
 Test task for the [alfa bank](https://github.com/ValeriyMakarshin/alfabank-task/blob/master/task-description.pdf).
 
+If you have any questions, you can ask them via [Telegram](https://telegram.me/valeriymakarshin).
+
 ## Requirement to work with project
 * Android Studio 3.0 or later with SDK 27
 * Kotlin
