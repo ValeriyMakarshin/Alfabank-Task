@@ -3,9 +3,9 @@ package com.hodzi.alfabanktask.utils.base
 import android.os.Bundle
 import android.support.annotation.CallSuper
 
-abstract class BasePresenter<V : BaseContract.View> : BaseContract.Presenter<V> {
+open class BasePresenter<V : BaseContract.View> : BaseContract.Presenter<V> {
     var view: V? = null
-    private var bundle: Bundle? = null
+    var bundle: Bundle? = null
 
     @CallSuper override fun attach(view: V, bundle: Bundle?) {
         this.view = view
