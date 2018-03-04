@@ -3,6 +3,7 @@ package com.hodzi.alfabanktask.feed.detail
 import android.os.Bundle
 import com.hodzi.alfabanktask.data.local.FeedItemEntity
 import com.hodzi.alfabanktask.interactor.Interactor
+import com.hodzi.alfabanktask.utils.HtmlUtil
 import com.hodzi.alfabanktask.utils.base.BasePresenter
 
 class DetailFeedPresenter(val interactor: Interactor) :
@@ -24,7 +25,7 @@ class DetailFeedPresenter(val interactor: Interactor) :
 
         view.showList(array)
         view.focusPosition(position)
-        view.setTitle(array[position].title)
+        view.setTitle(HtmlUtil.fromHtmlFormat(array[position].title).toString())
     }
 
     override fun usedBookmark(position: Int): Boolean = array[position].bookmark

@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.annotation.DrawableRes
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.hodzi.alfabanktask.R
@@ -60,9 +59,7 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
             }
 
             override fun onPageSelected(position: Int) {
-                presenter.array[position].title?.let {
-                    setTitle(HtmlUtil.fromHtmlFormat(it).toString())
-                }
+                setTitle(HtmlUtil.fromHtmlFormat(presenter.array[position].title).toString())
             }
         })
     }
@@ -74,7 +71,6 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        Log.i("132", "111")
         menu?.findItem(R.id.action_bookmark)?.icon =
             ContextCompat.getDrawable(this, getIcon(presenter.usedBookmark(
                 uiFeedItemsVp.currentItem
@@ -99,7 +95,6 @@ class DetailFeedActivity : BaseActivity<DetailFeedContract.View, DetailFeedContr
         } else {
             R.drawable.ic_bookmark_border_24dp
         }
-
     }
 
 }
