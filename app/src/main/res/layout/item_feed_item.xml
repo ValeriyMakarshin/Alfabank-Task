@@ -39,7 +39,7 @@
             android:id="@+id/uiFeedItemBookmarkV"
             android:layout_width="4dp"
             android:layout_height="0dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorBookmark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
