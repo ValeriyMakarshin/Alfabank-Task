@@ -18,10 +18,10 @@ class FeedPresenter(val interactor: Interactor) : BasePresenter<FeedContract.Vie
         disposable = interactor.getDbList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
+            .subscribe ({
                 list = it
                 view?.showList(it)
-            }
+            }, {})
     }
 
     override fun refresh() {

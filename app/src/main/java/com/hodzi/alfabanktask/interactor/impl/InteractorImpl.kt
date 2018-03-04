@@ -39,7 +39,7 @@ class InteractorImpl(val alfaExecutors: AlfaExecutors,
                     ?: Pair(Any(), ArrayList<FeedItemEntity>())
                 list
             }
-            .subscribe({ saveFeed(it) })
+            .subscribe({ saveFeed(it) }, {})
     }
 
     override fun updateBookmarkFeedItem(title: String, newBookmark: Boolean) {
