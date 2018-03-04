@@ -6,7 +6,9 @@ import com.hodzi.alfabanktask.interactor.Interactor
 import com.nhaarman.mockito_kotlin.*
 import io.reactivex.Flowable
 import io.reactivex.disposables.Disposable
-import org.junit.*
+import org.junit.Assert
+import org.junit.Rule
+import org.junit.Test
 
 
 class FeedPresenterTest {
@@ -15,13 +17,6 @@ class FeedPresenterTest {
 
     val mockInteractor: Interactor = mock()
     val feedPresenter: FeedPresenter = FeedPresenter(mockInteractor)
-
-    @Before fun setUp() {
-
-    }
-
-    @After fun tearDown() {
-    }
 
     @Test fun loadDataTest() {
         val expectedFeedItems = ArrayList<FeedItemEntity>()
