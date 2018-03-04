@@ -34,6 +34,10 @@ abstract class BaseActivity<in V : BaseContract.View, P : BaseContract.Presenter
         }
 
         viewInit()
+    }
+
+    override fun onStart() {
+        super.onStart()
         presenter.attach(this as V, intent.extras)
     }
 
