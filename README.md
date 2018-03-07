@@ -31,7 +31,7 @@ You can do it using setup instruction.
 ## Tests
 Browse from terminal to `projectRoot/app`, execute:
 * `./gradlew detektCheck` - to run code checkstyle verification
-* `./gradlew testProdReleaseUnitTest` to run unit tests
-* `./gradlew lintProdRelease` to run android linter
+* `./gradlew testReleaseUnitTest` to run unit tests
+* `./gradlew lintRelease` to run android linter
 
-You can run all verifications in single command: `./gradlew detektCheck lintProdRelease testProdReleaseUnitTest`
+You can run all verifications in single command: `./gradlew detektCheck lintRelease testReleaseUnitTest`
